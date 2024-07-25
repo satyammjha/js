@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5001
 const filePath = path.join(__dirname, 'data.json');
 const frontendPath = path.join(__dirname, '../frontend/build');
 

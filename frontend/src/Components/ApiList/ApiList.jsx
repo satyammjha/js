@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-const API_URL = 'http://localhost:5000';
+
 
 const ApiList = () => {
+    const API_URL = "http://localhost:5001";
     const [data, setData] = useState({ entries: [] });
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -85,26 +86,29 @@ const ApiList = () => {
             <div className="max-w-3xl w-full">
                 <div className="mb-4 text-center">
                     <h1 className="text-xl font-semibold">API Entries:</h1>
-                    <div className="flex flex-col md:flex-row md:justify-center mt-4">
-                        <input
-                            className="p-2 rounded-lg border border-gray-700 bg-gray-800 text-white mb-2 md:mb-0 md:mr-2 flex-1"
-                            value={newEntry.API}
-                            onChange={(e) => setNewEntry(prev => ({ ...prev, API: e.target.value }))}
-                            placeholder="Enter API value"
-                        />
-                        <input
-                            className="p-2 rounded-lg border border-gray-700 bg-gray-800 text-white mb-2 md:mb-0 md:mr-2 flex-1"
-                            value={newEntry.Id}
-                            onChange={(e) => setNewEntry(prev => ({ ...prev, Id: e.target.value }))}
-                            placeholder="Enter Merchent Id"
-                        />
-                        <button
-                            className="p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
-                            onClick={handleAddEntry}
-                        >
-                            Add Entry
-                        </button>
-                    </div>
+                    {data.entries.length === 0 ? (
+
+                        <div className="flex flex-col md:flex-row md:justify-center mt-4">
+                            <input
+                                className="p-2 rounded-lg border border-gray-700 bg-gray-800 text-white mb-2 md:mb-0 md:mr-2 flex-1"
+                                value={newEntry.API}
+                                onChange={(e) => setNewEntry(prev => ({ ...prev, API: e.target.value }))}
+                                placeholder="Enter API value"
+                            />
+                            <input
+                                className="p-2 rounded-lg border border-gray-700 bg-gray-800 text-white mb-2 md:mb-0 md:mr-2 flex-1"
+                                value={newEntry.Id}
+                                onChange={(e) => setNewEntry(prev => ({ ...prev, Id: e.target.value }))}
+                                placeholder="Enter Merchent Id"
+                            />
+                            <button
+                                className="p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+                                onClick={handleAddEntry}
+                            >
+                                Add Entry
+                            </button>
+                        </div>
+                    ) : <h5>Api are already present you delete existing to add new</h5>}
                 </div>
                 <table className="min-w-full bg-gray-800 border border-gray-700 rounded-lg">
                     <thead>

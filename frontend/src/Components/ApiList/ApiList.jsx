@@ -114,8 +114,8 @@ const ApiList = () => {
                             </>
                         ) : (
                             <>
-                                <div className='flex ml-5'>
-                                    <p className='text-[25px] bold bg-black p-3 rounded-lg'>{key}</p>
+                                <div className='flex ml-[7vw] mt-[10vh]'>
+                                    <p className='text-[25px] bold bg-[#242424] p-3 rounded-lg ml-[60%]'>{key}</p>
                                     <button onClick={() => handleEditKey(index)} className='ml-[10px] p-2'>
                                         Edit
                                     </button>

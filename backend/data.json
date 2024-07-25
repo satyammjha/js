@@ -1,5 +1,6 @@
-{
-  "keys": [
-    "sanm:okjn"
-  ]
-}
+[
+  {
+    "API": "API_VALUE_TEST",
+    "Id": "MERCHANT_ID_TEST"
+  }
+]
